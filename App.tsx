@@ -2,7 +2,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { initialData } from './mockData';
 import { FinancialState, Debt, HistoryPoint, AppSettings, FixedExpense, UserProfile, Income } from './types';
-import Card from './components/Card';
+import Card from './components/Card.tsx';
 import { 
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
   Cell, PieChart, Pie, Legend, LineChart, Line, BarChart, Bar, AreaChart, Area, ComposedChart
