@@ -3,7 +3,8 @@ import { GoogleGenAI } from "@google/genai";
 import { FinancialState } from "./types";
 
 export const getFinancialAdvice = async (state: FinancialState): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const api_key = import.meta.env.VITE_GEMINI_API_KEY;
+  const ai = new GoogleGenAI({ apiKey: api_key });
   
   const activeDebts = state.debts.filter(d => d.status === 'EM ANDAMENTO');
   const totalDebt = activeDebts.reduce((acc, d) => acc + d.totalBalance, 0);
